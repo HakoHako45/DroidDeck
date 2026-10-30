@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-docker run --rm -v "$PWD:/src" -w /src public.ecr.aws/docker/library/debian:bullseye bash -c '
+docker run --rm -v "$PWD:/src" -w /src debian:bullseye bash -c '
   set -euo pipefail
   install_compilers() {
     apt-get -o Acquire::Check-Valid-Until=false update -qq &&

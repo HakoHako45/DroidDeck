@@ -12,7 +12,7 @@ for f in tools/linuxfs/overlay/usr/bin/* tools/linuxfs/overlay/usr/bin/steamos-p
 done
 if [ -f tools/gamescope/release.env ]; then
   . tools/gamescope/release.env
-  curl -fsSL --retry 5 --retry-all-errors --connect-timeout 20 -o gamescope.tzst "https://github.com/${GAMESCOPE_REPO:-${GITHUB_REPOSITORY}}/releases/download/${GAMESCOPE_TAG}/gamescope.tzst"
+  curl -fsSL --retry 5 --retry-all-errors --connect-timeout 20 -o gamescope.tzst "https://github.com/${GAMESCOPE_REPO:-Droid-Deck/DroidDeck}/releases/download/${GAMESCOPE_TAG}/gamescope.tzst"
   echo "${GAMESCOPE_SHA256}  gamescope.tzst" | sha256sum -c -
   tar --use-compress-program=unzstd -xf gamescope.tzst -C "$D"
   test -f "$D/usr/local/bin/gamescope"
