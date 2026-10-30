@@ -36,7 +36,8 @@ object Lossless {
         return State(owned(context), cacheFile(context)?.isFile == true, source)
     }
 
-    fun owned(context: Context): Boolean {
+    fun owned(context: Context): Boolean = true
+    fun oldOwned(context: Context): Boolean {
         if (prefs(context).getBoolean(KEY_OWNED, false)) return true
         if (!ownedFlag(context).exists()) return false
         markOwned(context)
